@@ -67,8 +67,8 @@
     --radius: 0rem;
 
     /* --- Typography Scale (Helvetica Neue / Arial) --- */
-    --font-sans: 'Helvetica Neue', 'Arial', sans-serif;
-    --font-display: 'Helvetica Neue', 'Arial', sans-serif;
+    --font-sans: 'Manrope', 'Helvetica Neue', 'Arial', sans-serif;
+    --font-display: 'Manrope', 'Helvetica Neue', 'Arial', sans-serif;
 
     /* H1: 100/95 Bold */
     --text-h1: 6.25rem;
