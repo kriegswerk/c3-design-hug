@@ -1,0 +1,90 @@
+{
+  "name": "C3 Mountain Peak Design System",
+  "version": "1.0.0",
+  "categories": [
+    {
+      "id": "colors",
+      "label": "01 — Colors",
+      "title": "Color",
+      "description": "Core brand palette: Carbon, Tungsten, Graphene, Silica, White, and C3 Red accent."
+    },
+    {
+      "id": "typography",
+      "label": "02 — Typography",
+      "title": "Typography",
+      "description": "Helvetica Neue type hierarchy with Title Case headlines at 100% tracking and sentence case body copy."
+    },
+    {
+      "id": "buttons",
+      "label": "03 — Buttons",
+      "title": "Buttons",
+      "description": "Primary, secondary, and ghost button styles with sharp corners and Title Case labels."
+    },
+    {
+      "id": "inputs",
+      "label": "04 — Inputs",
+      "title": "Inputs",
+      "description": "Form inputs, text areas, selects, and search fields styled with the brand system."
+    },
+    {
+      "id": "badges-labels",
+      "label": "05 — Badges & Labels",
+      "title": "Badges & Labels",
+      "description": "Status indicators, tags, and category labels using Carbon backgrounds with white text."
+    },
+    {
+      "id": "cards",
+      "label": "06 — Cards",
+      "title": "Cards",
+      "description": "Content cards with sharp corners, Silica backgrounds, and structured layout patterns."
+    },
+    {
+      "id": "spacing",
+      "label": "07 — Spacing",
+      "title": "Spacing",
+      "description": "8pt grid system with defined spacing tokens from 4px to 192px."
+    },
+    {
+      "id": "style-rules",
+      "label": "08 — Style Rules",
+      "title": "Style Rules",
+      "description": "Typography casing rules, alignment standards, and letter-spacing guidelines."
+    },
+    {
+      "id": "voice-tone",
+      "label": "09 — Voice & Tone",
+      "title": "Voice & Tone",
+      "description": "Brand voice guidelines: direct, confident, technical, and authoritative."
+    },
+    {
+      "id": "content-strategy",
+      "label": "10 — Content Strategy",
+      "title": "Content Strategy",
+      "description": "Content hierarchy, messaging frameworks, and copy guidelines."
+    },
+    {
+      "id": "imagery",
+      "label": "11 — Imagery",
+      "title": "Imagery",
+      "description": "Photography style, image treatments, and visual content guidelines."
+    },
+    {
+      "id": "animation",
+      "label": "12 — Animation",
+      "title": "Animation",
+      "description": "Cascade Reveal scroll-triggered animation system and motion principles."
+    },
+    {
+      "id": "dots",
+      "label": "13 — Dots",
+      "title": "Dots",
+      "description": "Dot grid textures and patterns used as overlays and background treatments."
+    },
+    {
+      "id": "components",
+      "label": "14 — Components",
+      "title": "Components",
+      "description": "Composite UI components: navigation, heroes, footers, accordions, galleries, and content blocks."
+    }
+  ]
+}

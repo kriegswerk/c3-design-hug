@@ -1,0 +1,546 @@
+{
+  "name": "C3 AI Mountain Peak Design System",
+  "version": "2.0.0",
+  "description": "Light-first aesthetic. White and Silica backgrounds dominate. Carbon (#1A1A1A) is the darkest value — True Black is eliminated. Dot grid textures overlay light backgrounds and can mask photography. Typeface: Helvetica Neue.",
+
+  "color": {
+    "description": "Core brand palette: Carbon, Tungsten, Graphene, Silica, White, and C3 Red accent. Light-first — White and Silica dominate backgrounds; Carbon is used for text and sparse dark accents (footer, nav). True Black (#000000) is eliminated from the system.",
+    "primary": [
+      { "name": "White", "hex": "#FFFFFF", "rgb": "255, 255, 255", "hsl": "0 0% 100%", "token": "--white", "usage": "Primary background, text on dark surfaces" },
+      { "name": "Silica", "hex": "#F0F0F0", "rgb": "240, 240, 240", "hsl": "0 0% 94%", "token": "--silica", "usage": "Secondary background, card fills, light sections" },
+      { "name": "Carbon", "hex": "#1A1A1A", "rgb": "26, 26, 26", "hsl": "0 0% 10%", "token": "--carbon", "usage": "Primary text, dark accents, nav/footer backgrounds" }
+    ],
+    "secondary": [
+      { "name": "Graphene", "hex": "#979797", "rgb": "151, 151, 151", "hsl": "0 0% 59%", "token": "--graphene", "usage": "Muted text, secondary labels, supporting content" },
+      { "name": "Tungsten", "hex": "#404040", "rgb": "64, 64, 64", "hsl": "0 0% 25%", "token": "--tungsten", "usage": "CTA buttons, hover states, error indicators, category tags" }
+    ],
+    "accent": {
+      "name": "C3 Red",
+      "hex": "#EE3E24",
+      "rgb": "238, 62, 36",
+      "hsl": "8 84% 54%",
+      "token": "--c3-red",
+      "usage": "Product-specific use only — not a general UI accent. Reserved for brand mark and specific marketing contexts."
+    },
+    "extended": [
+      { "name": "Orange", "hex": "#F5881F", "rgb": "245, 136, 31" },
+      { "name": "Yellow", "hex": "#FFDB37", "rgb": "255, 219, 55" },
+      { "name": "Sky Blue", "hex": "#06A7E0", "rgb": "6, 167, 224" },
+      { "name": "Navy", "hex": "#257799", "rgb": "37, 119, 153" },
+      { "name": "Green", "hex": "#37C43A", "rgb": "55, 196, 58" }
+    ],
+    "rules": [
+      "True Black (#000000) is eliminated — Carbon (#1A1A1A) is the darkest value",
+      "Extended palette is reserved for product-specific or industry-specific communication only",
+      "Silica and Tungsten are used for functional UI elements, hover states, and error indicators"
+    ]
+  },
+
+  "typography": {
+    "description": "Helvetica Neue type hierarchy with Title Case headlines at 100% tracking and sentence case body copy.",
+    "fontFamily": "'Helvetica Neue', 'Arial', sans-serif",
+    "scale": [
+      { "name": "H1", "size": "100px", "lineHeight": "95px", "weight": 700, "case": "Title Case", "tracking": "100% (normal)", "token": "type-h1" },
+      { "name": "H2", "size": "70px", "lineHeight": "70px", "weight": 700, "case": "Title Case", "tracking": "100% (normal)", "token": "type-h2" },
+      { "name": "H3", "size": "45px", "lineHeight": "45px", "weight": 700, "case": "Title Case", "tracking": "100% (normal)", "token": "type-h3" },
+      { "name": "H4", "size": "32px", "lineHeight": "32px", "weight": 700, "case": "Title Case", "tracking": "100% (normal)", "token": "type-h4" },
+      { "name": "H5", "size": "24px", "lineHeight": "26px", "weight": 700, "case": "Sentence case", "tracking": "normal", "token": "type-h5" },
+      { "name": "H6", "size": "16px", "lineHeight": "22px", "weight": 700, "case": "Sentence case", "tracking": "normal", "token": "type-h6" },
+      { "name": "Body 1", "size": "24px", "lineHeight": "32px", "weight": 400, "case": "Sentence case", "tracking": "normal", "token": "type-body1" },
+      { "name": "Body 2", "size": "20px", "lineHeight": "28px", "weight": 400, "case": "Sentence case", "tracking": "normal", "token": "type-body2" },
+      { "name": "Paragraph", "size": "15px", "lineHeight": "18px", "weight": 400, "case": "Sentence case", "tracking": "normal", "token": "type-paragraph" },
+      { "name": "Caption", "size": "15px", "lineHeight": "18px", "weight": 300, "case": "Sentence case", "tracking": "normal", "token": "type-caption" },
+      { "name": "CTA", "size": "21px", "lineHeight": "22px", "weight": 700, "case": "Title Case", "tracking": "100% (normal)", "token": "type-cta" },
+      { "name": "Pullquote", "size": "34px", "lineHeight": "40px", "weight": 400, "case": "Sentence case", "tracking": "normal", "token": "type-pullquote" },
+      { "name": "Meta", "size": "18px", "lineHeight": "20px", "weight": 400, "case": "Uppercase", "tracking": "0.08em", "token": "type-meta" }
+    ],
+    "rules": [
+      "All text is left-aligned — no centered text",
+      "H1–H4 and buttons use Title Case with 100% letter-spacing",
+      "H5–H6, body, captions, and pullquotes use Sentence case",
+      "Never use all-caps on headlines or buttons"
+    ]
+  },
+
+  "buttons": {
+    "description": "Primary, secondary, and ghost button styles with sharp corners (0px radius) and Title Case labels.",
+    "rules": [
+      "All button labels use Title Case with normal letter-spacing",
+      "Never use all-caps or sentence case on buttons",
+      "Sharp corners — border-radius is always 0"
+    ],
+    "variants": [
+      {
+        "name": "Primary",
+        "background": "Carbon (#1A1A1A)",
+        "text": "White",
+        "hover": "Tungsten (#404040)",
+        "sizes": {
+          "large": { "padding": "16px 32px", "fontSize": "21px" },
+          "medium": { "padding": "12px 24px", "fontSize": "21px" },
+          "small": { "padding": "10px 20px", "fontSize": "18px" }
+        }
+      },
+      {
+        "name": "CTA",
+        "background": "Tungsten (#404040)",
+        "text": "White",
+        "hover": "Carbon (#1A1A1A)"
+      },
+      {
+        "name": "Outline",
+        "background": "Transparent",
+        "border": "2px solid Carbon",
+        "text": "Carbon",
+        "hover": "Fill Carbon, text White"
+      },
+      {
+        "name": "Ghost",
+        "background": "Transparent",
+        "border": "1px solid Border",
+        "text": "Muted foreground",
+        "hover": "Border darkens to Carbon"
+      },
+      {
+        "name": "On Dark — Primary",
+        "background": "White",
+        "text": "Carbon",
+        "hover": "Silica"
+      },
+      {
+        "name": "On Dark — Outline",
+        "background": "Transparent",
+        "border": "2px solid White",
+        "text": "White",
+        "hover": "Fill White, text Carbon"
+      }
+    ]
+  },
+
+  "inputs": {
+    "description": "Form inputs, text areas, selects, and search fields styled with the brand system. Sharp corners, no border-radius.",
+    "states": [
+      { "name": "Default", "border": "1px solid Border", "background": "Background", "placeholder": "Muted foreground" },
+      { "name": "Focused", "border": "1px solid Carbon", "background": "Background" },
+      { "name": "With Value", "border": "1px solid Carbon", "background": "Background" },
+      { "name": "Error", "border": "1px solid Tungsten", "background": "Background", "errorText": "Tungsten" },
+      { "name": "Disabled", "border": "1px solid Border", "background": "Silica", "opacity": 0.6 }
+    ],
+    "types": ["Text input", "Select", "Textarea", "Checkbox", "Radio"],
+    "rules": [
+      "All inputs use sharp corners (0px border-radius)",
+      "Error states use Tungsten — not C3 Red",
+      "Padding: 12px 16px",
+      "Font: system sans, base size"
+    ]
+  },
+
+  "badgesAndLabels": {
+    "description": "Status indicators, tags, and category labels using Carbon backgrounds with white text.",
+    "badges": [
+      { "name": "Carbon", "background": "Carbon (#1A1A1A)", "text": "White", "usage": "Primary badge" },
+      { "name": "Tungsten", "background": "Tungsten (#404040)", "text": "White", "usage": "Secondary badge" },
+      { "name": "Outline", "background": "Transparent", "border": "1px solid Carbon", "text": "Foreground" },
+      { "name": "Muted", "background": "Silica (#F0F0F0)", "text": "Muted foreground" },
+      { "name": "Graphene", "background": "Graphene (#979797)", "text": "White" }
+    ],
+    "badgeStyle": "px-3 py-1, text-xs, font-bold, uppercase, tracking-widest",
+    "sectionLabels": {
+      "style": "0.75rem, font-bold, uppercase, tracking 0.12em, color Tungsten",
+      "token": "c3-label"
+    },
+    "statusIndicators": [
+      { "label": "Active", "dotColor": "#37C43A" },
+      { "label": "Processing", "dotColor": "#06A7E0" },
+      { "label": "Warning", "dotColor": "#F5881F" },
+      { "label": "Error", "dotColor": "Tungsten (#404040)" },
+      { "label": "Inactive", "dotColor": "Graphene (#979797)" }
+    ]
+  },
+
+  "cards": {
+    "description": "Content cards with sharp corners, structured layout patterns. Three surface variants.",
+    "variants": [
+      {
+        "name": "Default",
+        "background": "White",
+        "border": "1px solid Border",
+        "hover": "Border darkens to Carbon",
+        "structure": ["c3-label category tag", "H4 headline", "Body 2 description", "CTA link"]
+      },
+      {
+        "name": "Dark",
+        "background": "Carbon (#1A1A1A)",
+        "text": "White",
+        "structure": ["c3-label category tag", "H4 headline (white)", "Body 2 description (graphene)", "CTA link (white)"]
+      },
+      {
+        "name": "Silica",
+        "background": "Silica (#F0F0F0)",
+        "structure": ["c3-label category tag", "H4 headline", "Body 2 description", "CTA link"]
+      }
+    ],
+    "metricCards": {
+      "description": "Grid of stat cards separated by 1px border gaps",
+      "structure": ["H2 stat value", "Caption label (uppercase, tracking-widest)"],
+      "background": "White with 1px border grid"
+    },
+    "rules": [
+      "Sharp corners — never use border-radius on cards",
+      "CTA links use uppercase tracking-widest style",
+      "Padding: 32px (p-8)"
+    ]
+  },
+
+  "spacing": {
+    "description": "8pt grid system with defined spacing tokens from 4px to 96px.",
+    "gridBasis": "8pt",
+    "tokens": [
+      { "name": "space-1", "value": "4px", "rem": "0.25rem" },
+      { "name": "space-2", "value": "8px", "rem": "0.5rem" },
+      { "name": "space-3", "value": "12px", "rem": "0.75rem" },
+      { "name": "space-4", "value": "16px", "rem": "1rem" },
+      { "name": "space-6", "value": "24px", "rem": "1.5rem" },
+      { "name": "space-8", "value": "32px", "rem": "2rem" },
+      { "name": "space-12", "value": "48px", "rem": "3rem" },
+      { "name": "space-16", "value": "64px", "rem": "4rem" },
+      { "name": "space-24", "value": "96px", "rem": "6rem" }
+    ],
+    "rules": [
+      "All spacing values are multiples of 4px",
+      "Section padding: space-16 (64px) or space-24 (96px)",
+      "Component internal padding: space-8 (32px)",
+      "Element gaps: space-4 (16px) to space-6 (24px)"
+    ]
+  },
+
+  "styleRules": {
+    "description": "Typography casing rules, alignment standards, and letter-spacing guidelines.",
+    "rules": [
+      {
+        "number": "01",
+        "title": "Title Case for headlines",
+        "description": "H1 through H4 are always written in Title Case — every word is capitalised.",
+        "appliesTo": ["H1", "H2", "H3", "H4"],
+        "correct": "Enterprise AI For Complex Organizations",
+        "incorrect": "Enterprise AI for complex organizations"
+      },
+      {
+        "number": "02",
+        "title": "Title Case for buttons",
+        "description": "All button labels and calls to action are written in Title Case. Never use all-caps or sentence case on buttons.",
+        "appliesTo": ["CTA", "Button Labels", "Link Actions"],
+        "correct": "Learn More",
+        "incorrect": "LEARN MORE"
+      },
+      {
+        "number": "03",
+        "title": "Sentence Case for body copy",
+        "description": "All body text, captions, pullquotes, and supporting copy use sentence case.",
+        "appliesTo": ["Body 1", "Body 2", "Caption", "Pullquote"],
+        "correct": "C3 AI is solving previously unsolvable problems across complex organizations.",
+        "incorrect": "C3 AI Is Solving Previously Unsolvable Problems Across Complex Organizations."
+      },
+      {
+        "number": "04",
+        "title": "Sentence Case for sub-headlines",
+        "description": "H5 and H6 sub-headlines use sentence case.",
+        "appliesTo": ["H5", "H6"],
+        "correct": "Why this matters for your business",
+        "incorrect": "Why This Matters For Your Business"
+      },
+      {
+        "number": "05",
+        "title": "Always left-aligned",
+        "description": "All text is left-aligned. There is no centered text in the C3 AI system.",
+        "appliesTo": ["All Text", "All Breakpoints"]
+      },
+      {
+        "number": "06",
+        "title": "100% letter spacing for headlines",
+        "description": "Headlines (H1–H4) use 100% letter-spacing (normal tracking). Body copy, sub-headlines, and buttons also use normal tracking.",
+        "appliesTo": ["H1", "H2", "H3", "H4"]
+      }
+    ]
+  },
+
+  "voiceAndTone": {
+    "description": "Brand voice guidelines: human, sophisticated, aspirational, and intelligent. Tone adapts to context.",
+    "voicePillars": ["Human", "Sophisticated", "Aspirational", "Intelligent"],
+    "toneTenets": [
+      {
+        "name": "Human",
+        "description": "Open and engaging. Our language is relatable without feeling forced or overly familiar.",
+        "is": ["Welcoming", "Personal", "Respectful", "Sincere"],
+        "isNot": ["Cold", "Overbearing", "Whimsical", "Self-centered", "Boastful"]
+      },
+      {
+        "name": "Sophisticated",
+        "description": "Confident, refined, and clear. We stay on topic and get to the point.",
+        "is": ["Strong", "Refined", "Current"],
+        "isNot": ["Complex", "Superior", "Dull"]
+      },
+      {
+        "name": "Aspirational",
+        "description": "Forward-looking and empowering. We explain how to get there, not just talk about the future.",
+        "is": ["Accessible", "Empowering", "Optimistic", "Grounded"],
+        "isNot": ["Self-centered", "Boastful", "Difficult"]
+      },
+      {
+        "name": "Intelligent",
+        "description": "Relevant and responsive. We understand our audience's context and meet them where they are.",
+        "is": ["Intuitive", "Relevant", "Direct", "Responsive"],
+        "isNot": ["Unclear", "Arrogant", "Impatient"]
+      }
+    ],
+    "dos": [
+      "Connect with and engage your audience",
+      "Acknowledge user needs before promoting the brand",
+      "Use contractions for a natural, conversational feel",
+      "Be concise and remove unnecessary complexity",
+      "Prioritize clarity and quality over quantity",
+      "Use clear value statements and back up claims with specifics",
+      "Reinforce messages with clear calls to action",
+      "Be proactive — anticipate questions and address context",
+      "Assume intelligence, regardless of technical expertise"
+    ],
+    "donts": [
+      "Lead with self-promotional or boastful language",
+      "Overuse exclamation points",
+      "Use slang or cultural references unfamiliar to a global audience",
+      "Use dated or overly formal business language",
+      "Talk down to readers or overcomplicate explanations",
+      "Use passive voice",
+      "Speak in vague or hypothetical terms without proof",
+      "Rely on tech or business clichés",
+      "Use excessive jargon for non-technical audiences",
+      "Use metaphors, puns, or clever phrasing that could confuse"
+    ]
+  },
+
+  "contentStrategy": {
+    "description": "Content hierarchy, messaging frameworks, and copy guidelines. Users should consume content in a predictable, logical flow — from confusion to actionable understanding.",
+    "framework": [
+      {
+        "step": "01",
+        "title": "Hook / Problem",
+        "userState": "Well Oriented & Confident",
+        "content": ["Acknowledge the user's world and context", "Clearly define the primary pain points", "Make the cost of inaction explicit"],
+        "experience": ["Clear purpose of the page", "Strong information hierarchy", "Expectations are set and met"]
+      },
+      {
+        "step": "02",
+        "title": "Solution",
+        "userState": "Intrigued & Ready to Learn",
+        "content": ["Introduce the product, service, or offering as the answer"],
+        "experience": ["Answer the core user problem early", "Lead with what matters most", "Provide CTAs that invite deeper exploration"]
+      },
+      {
+        "step": "03",
+        "title": "Value Proposition & Benefits",
+        "userState": "Building Understanding & Momentum",
+        "content": ["Explain how the solution addresses the problem", "Highlight tangible outcomes (time saved, revenue gained, risk reduced)"],
+        "experience": ["Expand with supporting data and context", "Reframe ideas in practical, relatable terms"]
+      },
+      {
+        "step": "04",
+        "title": "Primary Call to Action",
+        "userState": "Validated & Reassured",
+        "content": ["Drive toward a meaningful next step (demo, trial, consultation)"],
+        "experience": ["Show how the offering fits real workflows", "Clarify implementation requirements", "Address adoption concerns"]
+      },
+      {
+        "step": "05",
+        "title": "Social / 3rd Party Proof",
+        "userState": "Trust & Credibility",
+        "content": ["Case studies", "Testimonials", "Customer or partner logos", "Links to third-party validation"]
+      },
+      {
+        "step": "06",
+        "title": "How It Works",
+        "userState": "Comprehension",
+        "content": ["Explain the mechanics of the offering", "Show how it fits within an existing stack", "Establish subject-matter expertise"]
+      },
+      {
+        "step": "07",
+        "title": "Logistics & Implementation",
+        "userState": "Refocused on Action",
+        "content": ["Outline required skills and resources", "Explain how users are supported"],
+        "experience": ["Reiterate the core value proposition", "Distill next steps into clear, low-friction actions", "Provide conversion or adjacent-path CTAs"]
+      }
+    ],
+    "corePrinciple": "Every piece of content should help move the user from confusion to actionable understanding."
+  },
+
+  "imagery": {
+    "description": "Photography style, image treatments, and visual content guidelines. Two styles: Systems at Scale and Subject in Focus.",
+    "styles": [
+      {
+        "name": "Systems at Scale",
+        "description": "Illustrates scale and complex systems. Geometric compositions with visual rhythm, strong lines, textures, and patterns that communicate vastness.",
+        "examples": ["Solar panels", "Shipping containers", "Offshore wind farms", "Aerial crosswalks", "Building facades"]
+      },
+      {
+        "name": "Subject in Focus",
+        "description": "Humanistic and intimate, focusing on a single subject. Evocative but simple, direct, and dynamic. Strong perspective adds impact.",
+        "examples": ["Scientist in laboratory", "Industrial robot arm", "Naval warship", "Satellite dish", "Factory workers"]
+      }
+    ],
+    "usageRules": [
+      "Photography should always be immersive and engaging",
+      "Panoramic imagery, closely cropped frames, and densely populated visuals work well",
+      "Avoid common tech tropes",
+      "Selected imagery should be naturalistic and real"
+    ],
+    "treatments": [
+      "Dot masks can reveal photography through multi-scale circular cutouts",
+      "Gradient overlays (carbon to transparent) for text legibility on hero images",
+      "Grayscale is not required — full color is standard"
+    ]
+  },
+
+  "animation": {
+    "description": "Two primary animation patterns: Cascade Reveal and Parallax Drift. Motion is applied intentionally — not natively — to components when a design calls for it.",
+    "patterns": [
+      {
+        "name": "Cascade Reveal",
+        "keyword": "cascade-reveal",
+        "description": "Elements fade and translate into position as the user scrolls them into the viewport.",
+        "variants": {
+          "text": { "effect": "translateY(40px) + fade", "duration": "0.7s", "easing": "cubic-bezier(0.16, 1, 0.3, 1)" },
+          "image": { "effect": "scale(0.95) + fade", "duration": "0.8s", "easing": "cubic-bezier(0.16, 1, 0.3, 1)" }
+        },
+        "stagger": "120ms between children",
+        "resettable": true,
+        "usage": "Add class 'cascade-child' to each staggered element inside a CascadeReveal wrapper."
+      },
+      {
+        "name": "Parallax Drift",
+        "keyword": "parallax-drift",
+        "description": "Full-viewport sections where the background image moves at a slower rate than the foreground content, creating depth.",
+        "intensity": "0–1 (default 0.3)",
+        "alignOptions": ["center", "bottom-left"],
+        "overlay": true
+      }
+    ],
+    "rules": [
+      "Motion is opt-in, not default",
+      "One well-timed hero animation creates more delight than scattered micro-interactions",
+      "Cascade Reveal is the primary scroll animation for all content sections"
+    ]
+  },
+
+  "dots": {
+    "description": "Dot grid textures and patterns — the lifeblood of the C3 AI brand. Provides texture, rhythm, and visual interest. Dots serve as subtle background textures on light surfaces and can mask photography.",
+    "gridBasis": "12-point grid",
+    "scales": [
+      { "dotSize": "4px", "spacing": "4px", "density": "High", "usage": "Dense texture, data metaphors, background patterns" },
+      { "dotSize": "9px", "spacing": "5px", "density": "Medium", "usage": "Mid-range compositions, transition zones" },
+      { "dotSize": "20px", "spacing": "4px", "density": "Medium", "usage": "Prominent patterns, section dividers, focal elements" },
+      { "dotSize": "50px", "spacing": "4px", "density": "Low", "usage": "Hero compositions, large-scale focal points" },
+      { "dotSize": "188px", "spacing": "4px", "density": "Minimal", "usage": "Maximum scale — single focal circles, rarely used" }
+    ],
+    "backgroundTexture": {
+      "description": "Uniform small dot grid as subtle background texture on light sections",
+      "dotSize": "1px",
+      "gridSpacing": "20px",
+      "opacity": "10–12%",
+      "color": "Carbon on White or Silica"
+    },
+    "compositions": ["Staircase", "Multi-Scale Grid", "Dense Grid", "Left Anchor", "Top Anchor", "Halftone Grid", "Ascending Clusters"],
+    "usageRules": [
+      "Create metaphors — use dots to visually represent complex systems, data networks, or AI processes",
+      "Complement text — dots work alongside typography to reinforce messaging",
+      "Build dynamic compositions — combine multiple dot scales for visual interest",
+      "Respect the grid — all compositions follow strict mathematical relationships"
+    ],
+    "avoid": [
+      "Don't use dots as decorative noise — every pattern should have intention",
+      "Don't use colors outside the C3 palette (Carbon, Graphene, White) for dots",
+      "Don't rotate or skew dot grids — always align to the baseline grid",
+      "Don't use True Black (#000000) for dots — Carbon (#1A1A1A) is the darkest value"
+    ]
+  },
+
+  "components": {
+    "description": "Composite UI components built on the C3 AI design system. Swiss-grid system, brand color palette, 8pt spacing grid.",
+    "library": [
+      {
+        "name": "WebNav",
+        "description": "Primary site navigation with logo, inline links, and outlined CTA button."
+      },
+      {
+        "name": "HeroFullscreen",
+        "description": "Full-viewport hero with optional background image. Light (default) and dark variants.",
+        "variants": ["light (dot grid texture, dark text on silica)", "dark (background image, white text on carbon)"],
+        "props": ["headline", "description", "backgroundImage", "variant", "primaryCta", "secondaryCta"]
+      },
+      {
+        "name": "HeroHomepage",
+        "description": "Homepage hero with bold/light headline split, play button, and tagline.",
+        "variants": ["light", "dark"],
+        "props": ["headlineBold", "headlineLight", "backgroundImage", "variant", "playButton", "tagline"]
+      },
+      {
+        "name": "ContentCardsTiled",
+        "description": "Asymmetric bento-grid layout: large hero card spanning rows with smaller cards alongside.",
+        "props": ["headline", "topCards", "bottomCards"]
+      },
+      {
+        "name": "ContentCards5050",
+        "description": "Headline with two equal side-by-side image cards, each with a label overlay.",
+        "props": ["headline", "cards"]
+      },
+      {
+        "name": "FeaturesGrid",
+        "description": "Flexible feature grid supporting 3-column, 2×2, and 3×2 layouts with optional hero image.",
+        "props": ["headline", "description", "heroImage", "features", "columns", "primaryCta"]
+      },
+      {
+        "name": "FeatureSplit",
+        "description": "Two-column layout with text on one side and image on the other.",
+        "props": ["headline", "description", "image", "imagePosition", "primaryCta", "secondaryCta"]
+      },
+      {
+        "name": "AccordionSection",
+        "description": "Expandable accordion on silica background with semantic text colors.",
+        "props": ["headline", "items"]
+      },
+      {
+        "name": "Gallery",
+        "description": "Horizontally scrolling image carousel with prev/next arrows and dot indicators.",
+        "props": ["title", "images"]
+      },
+      {
+        "name": "ContactForm",
+        "description": "Light-themed contact section on silica with white input fields and carbon submit button."
+      },
+      {
+        "name": "RequestDemoFooter",
+        "description": "Silica-background section with bold headline and carbon CTA button."
+      },
+      {
+        "name": "MegaFooter",
+        "description": "Full-width mega footer with branded headline, staircase motif, categorized link columns, and bottom legal bar."
+      },
+      {
+        "name": "CascadeReveal",
+        "description": "Scroll-triggered animation wrapper. Applies cascade-reveal animations to children.",
+        "props": ["variant (text|image)", "delay", "resettable"]
+      },
+      {
+        "name": "ParallaxDrift",
+        "description": "Full-viewport parallax section with background image depth effect.",
+        "props": ["imageSrc", "imageAlt", "intensity", "align", "overlay"]
+      }
+    ]
+  },
+
+  "icons": {
+    "description": "Google Material Symbols (Outlined) loaded via Google Fonts. Icons render as ligatures.",
+    "source": "https://fonts.google.com/icons",
+    "defaultSize": "24px",
+    "sizes": ["20px", "24px", "36px", "48px"],
+    "usage": "<span class=\"material-symbols-outlined\">icon_name</span>"
+  }
+}

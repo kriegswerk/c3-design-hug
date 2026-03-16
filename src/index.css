@@ -1,0 +1,379 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   C3 AI Design System — Evolved Direction
+   Light-first aesthetic: White and Silica backgrounds dominate.
+   True Black is eliminated; Carbon (#1A1A1A) is the darkest value,
+   used primarily for text and sparse dark accents (footer, nav).
+   Dot grid textures overlay light backgrounds and can mask photography.
+   Primary palette: White (#FFFFFF), Silica (#F0F0F0), Graphene (#979797), Carbon (#1A1A1A)
+   Accent: C3 Red (#EE3E24) — used sparingly for CTAs and labels
+   Typeface: Helvetica Neue (system fallback: Arial, sans-serif)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+
+@layer base {
+  :root {
+    /* --- Core Brand Colors --- */
+    /* Carbon: primary dark — slightly off pure black, considered not default */
+    --carbon: 0 0% 10%;
+    /* True Black — for separation from carbon */
+    --true-black: 0 0% 0%;
+    /* Tungsten — darker gray for hierarchy */
+    --tungsten: 0 0% 25%;
+    /* Graphene — medium cool gray */
+    --graphene: 0 0% 59%;
+    /* Silica — near-white background for light sections */
+    --silica: 0 0% 94%;
+    /* White */
+    --white: 0 0% 100%;
+    /* C3 Red — product-specific use only, not a UI accent */
+    --c3-red: 8 84% 54%;
+    --c3-red-dark: 8 84% 44%;
+
+    /* --- Semantic Mappings (light mode = white base) --- */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 59%;
+
+    /* Accent → Tungsten (not red) */
+    --accent: 0 0% 25%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 8 84% 54%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 0% 10%;
+
+    --radius: 0rem;
+
+    /* --- Typography Scale (Helvetica Neue / Arial) --- */
+    --font-sans: 'Helvetica Neue', 'Arial', sans-serif;
+    --font-display: 'Helvetica Neue', 'Arial', sans-serif;
+
+    /* H1: 100/95 Bold */
+    --text-h1: 6.25rem;
+    --leading-h1: 5.9375rem;
+    /* H1-reduced: 85/81 Bold (85% of H1) */
+    --text-h1-reduced: 5.3125rem;
+    --leading-h1-reduced: 5.046875rem;
+    /* H2: 70/70 Bold */
+    --text-h2: 4.375rem;
+    --leading-h2: 4.375rem;
+    /* H3: 45/45 Bold */
+    --text-h3: 2.8125rem;
+    --leading-h3: 2.8125rem;
+    /* H4: 32/32 Bold */
+    --text-h4: 2rem;
+    --leading-h4: 2rem;
+    /* H5: 24/26 Bold caps */
+    --text-h5: 1.5rem;
+    --leading-h5: 1.625rem;
+    /* H6: 16/22 Bold caps */
+    --text-h6: 1rem;
+    --leading-h6: 1.375rem;
+    /* Body 1: 24/32 Regular */
+    --text-body1: 1.5rem;
+    --leading-body1: 2rem;
+    /* Body 2: 20/28 Regular */
+    --text-body2: 1.25rem;
+    --leading-body2: 1.75rem;
+    /* Paragraph: 15/18 Regular */
+    --text-paragraph: 0.9375rem;
+    --leading-paragraph: 1.125rem;
+    /* Caption: 15/18 Light */
+    --text-caption: 0.9375rem;
+    --leading-caption: 1.125rem;
+    /* CTA: 21/22 Bold */
+    --text-cta: 1.3125rem;
+    --leading-cta: 1.375rem;
+
+    /* --- Spacing (8pt grid) --- */
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 1.5rem;
+    --space-4: 2rem;
+    --space-6: 3rem;
+    --space-8: 4rem;
+    --space-12: 6rem;
+    --space-16: 8rem;
+    --space-24: 12rem;
+
+    /* --- Sidebar (keep compatible) --- */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 94%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 8 84% 54%;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 25%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 59%;
+    --accent: 8 84% 54%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 8 84% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 25%;
+    --input: 0 0% 25%;
+    --ring: 0 0% 59%;
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 0 0% 94%;
+    --sidebar-primary: 8 84% 54%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 25%;
+    --sidebar-accent-foreground: 0 0% 94%;
+    --sidebar-border: 0 0% 25%;
+    --sidebar-ring: 8 84% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Swiss-grid inspired: everything snaps to the grid */
+  /* Rule: All text is left-aligned — no centered text */
+  * {
+    text-align: left;
+  }
+
+  /* Rule: Headlines are Title Case with 100% letter-spacing (normal) */
+  h1, h2, h3, h4 {
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+
+  h5, h6 {
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 1;
+  }
+}
+
+@layer components {
+  /* --- Typography Components --- */
+  /* Headlines: Title Case, 100% tracking (normal) */
+  .type-h1 {
+    font-size: var(--text-h1);
+    line-height: var(--leading-h1);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: capitalize;
+  }
+  .type-h1-reduced {
+    font-size: var(--text-h1-reduced);
+    line-height: var(--leading-h1-reduced);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: capitalize;
+  }
+  .type-h2 {
+    font-size: var(--text-h2);
+    line-height: var(--leading-h2);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: capitalize;
+  }
+  .type-h3 {
+    font-size: var(--text-h3);
+    line-height: var(--leading-h3);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: capitalize;
+  }
+  .type-h4 {
+    font-size: var(--text-h4);
+    line-height: var(--leading-h4);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: capitalize;
+  }
+  /* H5 & H6: sub-headlines — sentence case per style guide */
+  .type-h5 {
+    font-size: var(--text-h5);
+    line-height: var(--leading-h5);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .type-h6 {
+    font-size: var(--text-h6);
+    line-height: var(--leading-h6);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .type-body1 {
+    font-size: var(--text-body1);
+    line-height: var(--leading-body1);
+    font-weight: 400;
+  }
+  .type-body2 {
+    font-size: var(--text-body2);
+    line-height: var(--leading-body2);
+    font-weight: 400;
+  }
+  .type-paragraph {
+    font-size: var(--text-paragraph);
+    line-height: var(--leading-paragraph);
+    font-weight: 400;
+  }
+  .type-caption {
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+    font-weight: 300;
+  }
+  /* CTA/Button: Title Case, 100% letter-spacing (normal), 18pt */
+  .type-cta {
+    font-size: 1.125rem;
+    line-height: var(--leading-cta);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: capitalize;
+  }
+  /* Pullquote & Body: Sentence case, normal letter-spacing */
+  .type-pullquote {
+    font-size: 2.125rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+  }
+  .type-meta {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* --- Grid Divider (Swiss design hairline) --- */
+  .c3-divider {
+    border-top: 1px solid hsl(var(--border));
+    width: 100%;
+  }
+
+  /* --- Color Swatch --- */
+  .color-swatch {
+    width: 100%;
+    aspect-ratio: 1;
+    border: 1px solid hsl(var(--border));
+  }
+
+  /* --- Section label — Tungsten category tag */
+  .c3-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: hsl(var(--tungsten));
+  }
+
+  /* ============================================================
+     Cascade Reveal — Scroll-triggered animation system
+     Name: "Cascade Reveal"
+     Prompt keyword: cascade-reveal
+     ============================================================ */
+
+  /* Base hidden state — text variant (translate-Y + fade) */
+  .cascade-text {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--cascade-delay, 0ms);
+  }
+
+  /* Base hidden state — image variant (scale + fade) */
+  .cascade-image {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--cascade-delay, 0ms);
+  }
+
+  /* Revealed state */
+  .cascade-visible.cascade-text {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .cascade-visible.cascade-image {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Staggered children: add class "cascade-child" to each element */
+  .cascade-visible .cascade-child {
+    opacity: 0;
+    transform: translateY(24px);
+    animation: cascade-child-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .cascade-visible .cascade-child:nth-child(1) { animation-delay: calc(var(--cascade-delay, 0ms) + 0ms); }
+  .cascade-visible .cascade-child:nth-child(2) { animation-delay: calc(var(--cascade-delay, 0ms) + 120ms); }
+  .cascade-visible .cascade-child:nth-child(3) { animation-delay: calc(var(--cascade-delay, 0ms) + 240ms); }
+  .cascade-visible .cascade-child:nth-child(4) { animation-delay: calc(var(--cascade-delay, 0ms) + 360ms); }
+  .cascade-visible .cascade-child:nth-child(5) { animation-delay: calc(var(--cascade-delay, 0ms) + 480ms); }
+  .cascade-visible .cascade-child:nth-child(6) { animation-delay: calc(var(--cascade-delay, 0ms) + 600ms); }
+
+  /* Children that haven't revealed yet */
+  .cascade-reveal:not(.cascade-visible) .cascade-child {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@keyframes cascade-child-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
