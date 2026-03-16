@@ -12,6 +12,14 @@ import Gallery from "@/components/c3/Gallery";
 import ContactForm from "@/components/c3/ContactForm";
 import MegaFooter from "@/components/c3/MegaFooter";
 import WebNav from "@/components/c3/WebNav";
+import Features4x from "@/components/c3/Features4x";
+import Features6x from "@/components/c3/Features6x";
+import Features3xHero from "@/components/c3/Features3xHero";
+import GalleryMosaic from "@/components/c3/GalleryMosaic";
+import GalleryTiled from "@/components/c3/GalleryTiled";
+import ContactSplit from "@/components/c3/ContactSplit";
+import CtaCentered from "@/components/c3/CtaCentered";
+import CtaSplit from "@/components/c3/CtaSplit";
 
 import focusFactory from "@/assets/imagery/focus-factory.jpg";
 import focusRobot from "@/assets/imagery/focus-robot.jpg";
@@ -116,7 +124,7 @@ const ComponentPreview = ({
 };
 
 const DSComponents = () => (
-  <DSSection id="components" label="13 — Components" title="Core Web Components">
+  <DSSection id="components" label="14 — Components" title="Core Web Components">
     <p className="type-body2 text-graphene max-w-3xl mb-16">
       A foundational library of page-level components built on the C3 AI design system.
       Each component follows the Swiss-grid system, uses the brand color palette, and
@@ -210,6 +218,232 @@ const DSComponents = () => (
         variant="dark"
         playButton={{ label: "Play" }}
         tagline="Enterprise AI | Invented Here"
+      />
+    </ComponentPreview>
+
+    <ComponentPreview
+      title="Features 4× (dark)"
+      description="Dark-background 4-column feature grid with numbered cards, icons, and a tag pill header."
+      code={`<Features4x
+  tag="Features"
+  headline="Platform capabilities built for scale"
+  description="Unified infrastructure for modern enterprise teams demanding reliability and speed."
+  features={[
+    { title: "Modular Architecture", description: "Compose services independently..." },
+    { title: "Global Edge Network", description: "Sub-50ms latency across 200+ PoPs..." },
+    { title: "Zero-Trust Security", description: "End-to-end encryption..." },
+    { title: "Observability Suite", description: "Real-time tracing, metrics..." },
+  ]}
+/>`}
+    >
+      <Features4x
+        tag="Features"
+        headline="Platform capabilities built for scale"
+        description="Unified infrastructure for modern enterprise teams demanding reliability and speed."
+        features={[
+          { title: "Modular Architecture", description: "Compose services independently across distributed environments without vendor lock-in." },
+          { title: "Global Edge Network", description: "Sub-50ms latency across 200+ PoPs with intelligent geo-routing and failover." },
+          { title: "Zero-Trust Security", description: "End-to-end encryption with hardware-backed identity attestation at every node." },
+          { title: "Observability Suite", description: "Real-time tracing, metrics, and log aggregation with ML-powered anomaly detection." },
+        ]}
+      />
+    </ComponentPreview>
+
+    <ComponentPreview
+      title="Features 6× (dark)"
+      description="Dark-background 3×2 feature grid with bordered cells, numbered cards, icons, and optional CTA."
+      code={`<Features6x
+  tag="Platform"
+  headline="Everything your team needs in one place"
+  ctaLabel="Explore all features"
+  features={[
+    { title: "AI Model Registry", description: "Version, tag, and deploy models..." },
+    { title: "Data Pipeline Studio", description: "Visual drag-and-drop builder..." },
+    { title: "Scheduled Inference", description: "Cron-style batch inference..." },
+    { title: "Feature Store", description: "Shared, low-latency feature store..." },
+    { title: "Drift Detection", description: "Automated statistical tests..." },
+    { title: "RBAC & Compliance", description: "Fine-grained role controls..." },
+  ]}
+/>`}
+    >
+      <Features6x
+        tag="Platform"
+        headline="Everything your team needs in one place"
+        ctaLabel="Explore all features"
+        features={[
+          { title: "AI Model Registry", description: "Version, tag, and deploy models from a centralised registry with rollback support." },
+          { title: "Data Pipeline Studio", description: "Visual drag-and-drop builder for complex ETL workflows at petabyte scale." },
+          { title: "Scheduled Inference", description: "Cron-style batch inference with auto-scaling GPU pools and cost controls." },
+          { title: "Feature Store", description: "Shared, low-latency feature store backed by Redis and columnar storage." },
+          { title: "Drift Detection", description: "Automated statistical tests flag input and prediction drift before impact." },
+          { title: "RBAC & Compliance", description: "Fine-grained role controls with SOC 2, HIPAA, and GDPR audit trail exports." },
+        ]}
+      />
+    </ComponentPreview>
+
+    <ComponentPreview
+      title="Features 3× hero (dark)"
+      description="Large hero heading with tag and description, plus 3 image feature cards below."
+      code={`<Features3xHero
+  tag="Why us"
+  headline="Three reasons enterprises choose us"
+  description="A purpose-built stack that removes friction from model deployment to production monitoring."
+  ctaLabel="Get started"
+  features={[
+    { tag: "Speed", image: "/image.jpg", title: "10× faster deployments", description: "..." },
+    { tag: "Scale", image: "/image.jpg", title: "Infinite horizontal scale", description: "..." },
+    { tag: "Trust", image: "/image.jpg", title: "Enterprise-grade trust", description: "..." },
+  ]}
+/>`}
+    >
+      <Features3xHero
+        tag="Why us"
+        headline="Three reasons enterprises choose us"
+        description="A purpose-built stack that removes friction from model deployment to production monitoring."
+        ctaLabel="Get started"
+        features={[
+          { tag: "Speed", image: focusFactory, title: "10× faster deployments", description: "Containerised serving with pre-warmed pools eliminates cold-start latency across all model sizes." },
+          { tag: "Scale", image: systemsVessel, title: "Infinite horizontal scale", description: "Kubernetes-native autoscaler handles burst traffic from zero to millions of requests per second." },
+          { tag: "Trust", image: preferredCampus, title: "Enterprise-grade trust", description: "Full audit logging, data lineage graphs, and an always-on compliance dashboard for every team." },
+        ]}
+      />
+    </ComponentPreview>
+
+    <ComponentPreview
+      title="Gallery — mosaic (dark)"
+      description="Full-width masonry-style image grid with hover caption overlay on dark background."
+      code={`<GalleryMosaic
+  tag="Gallery"
+  headline="Inside the platform"
+  description="Real screens from teams deploying production AI at scale."
+  images={[
+    { src: "/img1.jpg", label: "Model Dashboard" },
+    { src: "/img2.jpg", label: "Analytics" },
+    { src: "/img3.jpg", label: "AI Pipeline" },
+    { src: "/img4.jpg", label: "Infrastructure" },
+    { src: "/img5.jpg", label: "Monitoring" },
+  ]}
+/>`}
+    >
+      <GalleryMosaic
+        tag="Gallery"
+        headline="Inside the platform"
+        description="Real screens from teams deploying production AI at scale."
+        images={[
+          { src: focusFactory, label: "Model Dashboard" },
+          { src: systemsSolar, label: "Analytics" },
+          { src: focusRobot, label: "AI Pipeline" },
+          { src: systemsWindmills, label: "Infrastructure" },
+          { src: focusWarship, label: "Monitoring" },
+        ]}
+      />
+    </ComponentPreview>
+
+    <ComponentPreview
+      title="Gallery — tiled (dark)"
+      description="Equal-size tile grid with numbered hover overlay, arrow icon, and slide-up label."
+      code={`<GalleryTiled
+  tag="Tiled Gallery"
+  headline="Work that speaks for itself"
+  ctaLabel="View all"
+  items={[
+    { src: "/img.jpg", label: "ML Dashboard" },
+    { src: "/img.jpg", label: "Data Insights" },
+    // ...up to 8
+  ]}
+/>`}
+    >
+      <GalleryTiled
+        tag="Tiled Gallery"
+        headline="Work that speaks for itself"
+        ctaLabel="View all"
+        items={[
+          { src: focusFactory, label: "ML Dashboard" },
+          { src: systemsSolar, label: "Data Insights" },
+          { src: focusRobot, label: "Neural Pipeline" },
+          { src: preferredCampus, label: "Security Layer" },
+          { src: systemsWindmills, label: "Server Network" },
+          { src: focusSatellite, label: "Circuit Board" },
+          { src: systemsVessel, label: "Global Network" },
+          { src: preferredDatacenter, label: "Compute Layer" },
+        ]}
+      />
+    </ComponentPreview>
+
+    <ComponentPreview
+      title="Contact — split (dark)"
+      description="Dark-background split layout: left headline with contact details, right form with underline inputs."
+      code={`<ContactSplit
+  tag="Contact"
+  headline="Let's build something remarkable"
+  description="Our team is ready to help."
+  details={[
+    { label: "Email", value: "hello@enterprise.ai" },
+    { label: "Office", value: "1 Market Street, San Francisco, CA 94105" },
+    { label: "Phone", value: "+1 (415) 000-0000" },
+  ]}
+/>`}
+    >
+      <ContactSplit />
+    </ComponentPreview>
+
+    <ComponentPreview
+      title="CTA — centered (dark)"
+      description="Dark-background centered CTA with large headline, two buttons, and social proof badges."
+      code={`<CtaCentered
+  tag="Get started today"
+  headline="Deploy your first model in minutes"
+  description="No credit card required. Spin up a sandbox, connect your data, and have a live endpoint in under ten minutes."
+  primaryLabel="Start free trial"
+  secondaryLabel="Book a demo"
+  badges={["SOC 2", "ISO 27001", "HIPAA", "GDPR"]}
+/>`}
+    >
+      <CtaCentered
+        tag="Get started today"
+        headline="Deploy your first model in minutes"
+        description="No credit card required. Spin up a sandbox, connect your data, and have a live endpoint in under ten minutes."
+        primaryLabel="Start free trial"
+        secondaryLabel="Book a demo"
+        badges={["SOC 2", "ISO 27001", "HIPAA", "GDPR"]}
+      />
+    </ComponentPreview>
+
+    <ComponentPreview
+      title="CTA — split (light/dark)"
+      description="Split layout: light left panel with copy and CTA, dark right panel with background image and pricing card."
+      code={`<CtaSplit
+  tag="Ready to scale?"
+  headline="Talk to our enterprise team"
+  description="Custom SLAs, dedicated infrastructure, and a named success engineer from day one."
+  ctaLabel="Schedule a call"
+  socialProof="Avg response time under 2 hours"
+  image="/path/to/image.jpg"
+  pricingLabel="Annual plan"
+  pricingValue="$0"
+  pricingSubtext="Free to start. Pay as you scale."
+  pricingFeatures={[
+    { text: "Unlimited models" },
+    { text: "5M free inferences / mo" },
+    { text: "Community support" },
+  ]}
+/>`}
+    >
+      <CtaSplit
+        tag="Ready to scale?"
+        headline="Talk to our enterprise team"
+        description="Custom SLAs, dedicated infrastructure, and a named success engineer from day one."
+        ctaLabel="Schedule a call"
+        socialProof="Avg response time under 2 hours"
+        image={focusFactory}
+        pricingLabel="Annual plan"
+        pricingValue="$0"
+        pricingSubtext="Free to start. Pay as you scale."
+        pricingFeatures={[
+          { text: "Unlimited models" },
+          { text: "5M free inferences / mo" },
+          { text: "Community support" },
+        ]}
       />
     </ComponentPreview>
 
@@ -334,12 +568,7 @@ const DSComponents = () => (
       description="Headline + CTA on left, 2×2 grid of icon + title + description feature cards."
       code={`<FeaturesGrid
   headline="Powerful Tools, Limitless Possibilities"
-  features={[
-    { title: "Easy Publishing", description: "..." },
-    { title: "Grid Layouts", description: "..." },
-    { title: "SEO & Analytics", description: "..." },
-    { title: "Collaborations", description: "..." },
-  ]}
+  features={[...]}
   columns={2}
   primaryCta={{ label: "Button Text" }}
 />`}
@@ -361,14 +590,7 @@ const DSComponents = () => (
       code={`<FeaturesGrid
   headline="Powerful Tools, Limitless Possibilities"
   description="Unlock your creative potential with our robust toolkit."
-  features={[
-    { title: "Easy Publishing", description: "..." },
-    { title: "Grid Layouts", description: "..." },
-    { title: "SEO & Analytics", description: "..." },
-    { title: "Collaborations", description: "..." },
-    { title: "Next Gen Images", description: "..." },
-    { title: "Typography", description: "..." },
-  ]}
+  features={[...6 items]}
   columns={3}
 />`}
     >
@@ -385,7 +607,7 @@ const DSComponents = () => (
       description="Two-column layout: content on left, image on right. Supports primary and secondary CTAs."
       code={`<FeatureSplit
   headline="Next Gen Images"
-  description="Elevating your website with next-gen images involves using modern and optimized image formats."
+  description="Elevating your website with next-gen images..."
   image="/path/to/image.jpg"
   imagePosition="right"
   primaryCta={{ label: "Book a Demo" }}
@@ -407,7 +629,7 @@ const DSComponents = () => (
       description="Two-column layout: image on left, content on right. Mirror of the left variant."
       code={`<FeatureSplit
   headline="Easy Publishing"
-  description="Streamline your workflow using platforms that offer simplified publishing processes."
+  description="Streamline your workflow..."
   image="/path/to/image.jpg"
   imagePosition="left"
   primaryCta={{ label: "Book a Demo" }}
@@ -429,7 +651,7 @@ const DSComponents = () => (
       description="Two-column layout: content on left, image on right. No call-to-action buttons."
       code={`<FeatureSplit
   headline="Next Gen Images"
-  description="Elevating your website with next-gen images involves using modern and optimized image formats."
+  description="..."
   image="/path/to/image.jpg"
   imagePosition="right"
 />`}
@@ -447,7 +669,7 @@ const DSComponents = () => (
       description="Two-column layout: image on left, content on right. No call-to-action buttons."
       code={`<FeatureSplit
   headline="Easy Publishing"
-  description="Streamline your workflow using platforms that offer simplified publishing processes."
+  description="..."
   image="/path/to/image.jpg"
   imagePosition="left"
 />`}
