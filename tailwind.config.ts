@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["'Helvetica Neue'", "Arial", "sans-serif"],
-        display: ["'Helvetica Neue'", "Arial", "sans-serif"],
+        sans: ["'Manrope'", "'Helvetica Neue'", "Arial", "sans-serif"],
+        display: ["'Manrope'", "'Helvetica Neue'", "Arial", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

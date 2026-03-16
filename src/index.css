@@ -13,7 +13,7 @@
    Typeface: Helvetica Neue (system fallback: Arial, sans-serif)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
@@ -67,8 +67,8 @@
     --radius: 0rem;
 
     /* --- Typography Scale (Helvetica Neue / Arial) --- */
-    --font-sans: 'Helvetica Neue', 'Arial', sans-serif;
-    --font-display: 'Helvetica Neue', 'Arial', sans-serif;
+    --font-sans: 'Manrope', 'Helvetica Neue', 'Arial', sans-serif;
+    --font-display: 'Manrope', 'Helvetica Neue', 'Arial', sans-serif;
 
     /* H1: 100/95 Bold */
     --text-h1: 6.25rem;
