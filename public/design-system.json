@@ -1,18 +1,18 @@
 {
   "name": "C3 AI Mountain Peak Design System",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Light-first aesthetic. White and Silica backgrounds dominate. Carbon (#1A1A1A) is the darkest value — True Black is eliminated. Dot grid textures overlay light backgrounds and can mask photography. Typeface: Helvetica Neue.",
 
   "color": {
     "description": "Core brand palette: Carbon, Tungsten, Graphene, Silica, White, and C3 Red accent. Light-first — White and Silica dominate backgrounds; Carbon is used for text and sparse dark accents (footer, nav). True Black (#000000) is eliminated from the system.",
     "primary": [
-      { "name": "White", "hex": "#FFFFFF", "rgb": "255, 255, 255", "hsl": "0 0% 100%", "token": "--white", "usage": "Primary background, text on dark surfaces" },
-      { "name": "Silica", "hex": "#F0F0F0", "rgb": "240, 240, 240", "hsl": "0 0% 94%", "token": "--silica", "usage": "Secondary background, card fills, light sections" },
-      { "name": "Carbon", "hex": "#1A1A1A", "rgb": "26, 26, 26", "hsl": "0 0% 10%", "token": "--carbon", "usage": "Primary text, dark accents, nav/footer backgrounds" }
+      { "name": "White", "hex": "#FFFFFF", "rgb": "255, 255, 255", "hsl": "0 0% 100%", "token": "--white", "tailwind": "bg-white", "usage": "Primary background, text on dark surfaces" },
+      { "name": "Silica", "hex": "#F0F0F0", "rgb": "240, 240, 240", "hsl": "0 0% 94%", "token": "--silica", "tailwind": "bg-silica", "usage": "Secondary background, card fills, light sections" },
+      { "name": "Carbon", "hex": "#1A1A1A", "rgb": "26, 26, 26", "hsl": "0 0% 10%", "token": "--carbon", "tailwind": "bg-carbon", "usage": "Primary text, dark accents, nav/footer backgrounds" }
     ],
     "secondary": [
-      { "name": "Graphene", "hex": "#979797", "rgb": "151, 151, 151", "hsl": "0 0% 59%", "token": "--graphene", "usage": "Muted text, secondary labels, supporting content" },
-      { "name": "Tungsten", "hex": "#404040", "rgb": "64, 64, 64", "hsl": "0 0% 25%", "token": "--tungsten", "usage": "CTA buttons, hover states, error indicators, category tags" }
+      { "name": "Graphene", "hex": "#979797", "rgb": "151, 151, 151", "hsl": "0 0% 59%", "token": "--graphene", "tailwind": "bg-graphene", "usage": "Muted text, secondary labels, supporting content" },
+      { "name": "Tungsten", "hex": "#404040", "rgb": "64, 64, 64", "hsl": "0 0% 25%", "token": "--tungsten", "tailwind": "bg-tungsten", "usage": "CTA buttons, hover states, error indicators, category tags" }
     ],
     "accent": {
       "name": "C3 Red",
@@ -20,6 +20,8 @@
       "rgb": "238, 62, 36",
       "hsl": "8 84% 54%",
       "token": "--c3-red",
+      "darkVariant": { "hex": "#C43118", "hsl": "8 84% 44%", "token": "--c3-red-dark" },
+      "tailwind": "bg-c3-red",
       "usage": "Product-specific use only — not a general UI accent. Reserved for brand mark and specific marketing contexts."
     },
     "extended": [
@@ -29,36 +31,74 @@
       { "name": "Navy", "hex": "#257799", "rgb": "37, 119, 153" },
       { "name": "Green", "hex": "#37C43A", "rgb": "55, 196, 58" }
     ],
+    "semanticTokens": {
+      "background": { "light": "0 0% 100%", "dark": "0 0% 10%", "maps": "White / Carbon" },
+      "foreground": { "light": "0 0% 10%", "dark": "0 0% 100%", "maps": "Carbon / White" },
+      "card": { "light": "0 0% 100%", "dark": "0 0% 10%" },
+      "card-foreground": { "light": "0 0% 10%", "dark": "0 0% 100%" },
+      "popover": { "light": "0 0% 100%", "dark": "0 0% 10%" },
+      "popover-foreground": { "light": "0 0% 10%", "dark": "0 0% 100%" },
+      "primary": { "light": "0 0% 10%", "dark": "0 0% 100%", "maps": "Carbon / White" },
+      "primary-foreground": { "light": "0 0% 100%", "dark": "0 0% 10%" },
+      "secondary": { "light": "0 0% 94%", "dark": "0 0% 25%", "maps": "Silica / Tungsten" },
+      "secondary-foreground": { "light": "0 0% 10%", "dark": "0 0% 100%" },
+      "muted": { "light": "0 0% 94%", "dark": "0 0% 25%", "maps": "Silica / Tungsten" },
+      "muted-foreground": { "light": "0 0% 59%", "dark": "0 0% 59%", "maps": "Graphene" },
+      "accent": { "light": "0 0% 25%", "dark": "8 84% 54%", "maps": "Tungsten / C3 Red" },
+      "accent-foreground": { "light": "0 0% 100%", "dark": "0 0% 100%" },
+      "destructive": { "light": "8 84% 54%", "dark": "8 84% 54%", "maps": "C3 Red" },
+      "destructive-foreground": { "light": "0 0% 100%", "dark": "0 0% 100%" },
+      "border": { "light": "0 0% 88%", "dark": "0 0% 25%" },
+      "input": { "light": "0 0% 88%", "dark": "0 0% 25%" },
+      "ring": { "light": "0 0% 10%", "dark": "0 0% 59%" },
+      "radius": "0rem"
+    },
     "rules": [
       "True Black (#000000) is eliminated — Carbon (#1A1A1A) is the darkest value",
       "Extended palette is reserved for product-specific or industry-specific communication only",
-      "Silica and Tungsten are used for functional UI elements, hover states, and error indicators"
+      "Silica and Tungsten are used for functional UI elements, hover states, and error indicators",
+      "All colors stored as HSL in CSS custom properties"
     ]
   },
 
   "typography": {
     "description": "Helvetica Neue type hierarchy with Title Case headlines at 100% tracking and sentence case body copy.",
-    "fontFamily": "'Helvetica Neue', 'Arial', sans-serif",
+    "fontFamily": {
+      "sans": "'Helvetica Neue', 'Arial', sans-serif",
+      "display": "'Helvetica Neue', 'Arial', sans-serif",
+      "token": "--font-sans"
+    },
     "scale": [
-      { "name": "H1", "size": "100px", "lineHeight": "95px", "weight": 700, "case": "Title Case", "tracking": "100% (normal)", "token": "type-h1" },
-      { "name": "H2", "size": "70px", "lineHeight": "70px", "weight": 700, "case": "Title Case", "tracking": "100% (normal)", "token": "type-h2" },
-      { "name": "H3", "size": "45px", "lineHeight": "45px", "weight": 700, "case": "Title Case", "tracking": "100% (normal)", "token": "type-h3" },
-      { "name": "H4", "size": "32px", "lineHeight": "32px", "weight": 700, "case": "Title Case", "tracking": "100% (normal)", "token": "type-h4" },
-      { "name": "H5", "size": "24px", "lineHeight": "26px", "weight": 700, "case": "Sentence case", "tracking": "normal", "token": "type-h5" },
-      { "name": "H6", "size": "16px", "lineHeight": "22px", "weight": 700, "case": "Sentence case", "tracking": "normal", "token": "type-h6" },
-      { "name": "Body 1", "size": "24px", "lineHeight": "32px", "weight": 400, "case": "Sentence case", "tracking": "normal", "token": "type-body1" },
-      { "name": "Body 2", "size": "20px", "lineHeight": "28px", "weight": 400, "case": "Sentence case", "tracking": "normal", "token": "type-body2" },
-      { "name": "Paragraph", "size": "15px", "lineHeight": "18px", "weight": 400, "case": "Sentence case", "tracking": "normal", "token": "type-paragraph" },
-      { "name": "Caption", "size": "15px", "lineHeight": "18px", "weight": 300, "case": "Sentence case", "tracking": "normal", "token": "type-caption" },
-      { "name": "CTA", "size": "21px", "lineHeight": "22px", "weight": 700, "case": "Title Case", "tracking": "100% (normal)", "token": "type-cta" },
-      { "name": "Pullquote", "size": "34px", "lineHeight": "40px", "weight": 400, "case": "Sentence case", "tracking": "normal", "token": "type-pullquote" },
-      { "name": "Meta", "size": "18px", "lineHeight": "20px", "weight": 400, "case": "Uppercase", "tracking": "0.08em", "token": "type-meta" }
+      { "name": "H1", "size": "100px", "rem": "6.25rem", "lineHeight": "95px", "lineHeightRem": "5.9375rem", "weight": 700, "case": "Title Case", "tracking": "normal (0)", "cssClass": "type-h1", "token": "--text-h1" },
+      { "name": "H1 Reduced", "size": "85px", "rem": "5.3125rem", "lineHeight": "81px", "lineHeightRem": "5.046875rem", "weight": 700, "case": "Title Case", "tracking": "normal (0)", "cssClass": "type-h1-reduced", "token": "--text-h1-reduced" },
+      { "name": "H2", "size": "70px", "rem": "4.375rem", "lineHeight": "70px", "lineHeightRem": "4.375rem", "weight": 700, "case": "Title Case", "tracking": "normal (0)", "cssClass": "type-h2", "token": "--text-h2" },
+      { "name": "H3", "size": "45px", "rem": "2.8125rem", "lineHeight": "45px", "lineHeightRem": "2.8125rem", "weight": 700, "case": "Title Case", "tracking": "normal (0)", "cssClass": "type-h3", "token": "--text-h3" },
+      { "name": "H4", "size": "32px", "rem": "2rem", "lineHeight": "32px", "lineHeightRem": "2rem", "weight": 700, "case": "Title Case", "tracking": "normal (0)", "cssClass": "type-h4", "token": "--text-h4" },
+      { "name": "H5", "size": "24px", "rem": "1.5rem", "lineHeight": "26px", "lineHeightRem": "1.625rem", "weight": 700, "case": "Sentence case", "tracking": "normal", "cssClass": "type-h5", "token": "--text-h5" },
+      { "name": "H6", "size": "16px", "rem": "1rem", "lineHeight": "22px", "lineHeightRem": "1.375rem", "weight": 700, "case": "Sentence case", "tracking": "normal", "cssClass": "type-h6", "token": "--text-h6" },
+      { "name": "Body 1", "size": "24px", "rem": "1.5rem", "lineHeight": "32px", "lineHeightRem": "2rem", "weight": 400, "case": "Sentence case", "tracking": "normal", "cssClass": "type-body1", "token": "--text-body1" },
+      { "name": "Body 2", "size": "20px", "rem": "1.25rem", "lineHeight": "28px", "lineHeightRem": "1.75rem", "weight": 400, "case": "Sentence case", "tracking": "normal", "cssClass": "type-body2", "token": "--text-body2" },
+      { "name": "Paragraph", "size": "15px", "rem": "0.9375rem", "lineHeight": "18px", "lineHeightRem": "1.125rem", "weight": 400, "case": "Sentence case", "tracking": "normal", "cssClass": "type-paragraph", "token": "--text-paragraph" },
+      { "name": "Caption", "size": "15px", "rem": "0.9375rem", "lineHeight": "18px", "lineHeightRem": "1.125rem", "weight": 300, "case": "Sentence case", "tracking": "normal", "cssClass": "type-caption", "token": "--text-caption" },
+      { "name": "CTA", "size": "18px", "rem": "1.125rem", "lineHeight": "22px", "lineHeightRem": "1.375rem", "weight": 700, "case": "Title Case", "tracking": "normal (0)", "cssClass": "type-cta", "token": "--text-cta" },
+      { "name": "Pullquote", "size": "34px", "rem": "2.125rem", "lineHeight": "40px", "lineHeightRem": "2.5rem", "weight": 400, "case": "Sentence case", "tracking": "normal", "cssClass": "type-pullquote" },
+      { "name": "Meta", "size": "18px", "rem": "1.125rem", "lineHeight": "20px", "lineHeightRem": "1.25rem", "weight": 400, "case": "Uppercase", "tracking": "0.08em", "cssClass": "type-meta" }
     ],
+    "sectionLabel": {
+      "cssClass": "c3-label",
+      "size": "12px",
+      "weight": 700,
+      "case": "Uppercase",
+      "tracking": "0.12em",
+      "color": "Tungsten"
+    },
     "rules": [
       "All text is left-aligned — no centered text",
-      "H1–H4 and buttons use Title Case with 100% letter-spacing",
+      "H1–H4 and buttons use Title Case with normal (0) letter-spacing",
       "H5–H6, body, captions, and pullquotes use Sentence case",
-      "Never use all-caps on headlines or buttons"
+      "Never use all-caps on headlines or buttons",
+      "Headlines (H1–H4) use text-transform: capitalize in CSS",
+      "Meta uses text-transform: uppercase with 0.08em tracking"
     ]
   },
 
@@ -79,40 +119,46 @@
           "large": { "padding": "16px 32px", "fontSize": "21px" },
           "medium": { "padding": "12px 24px", "fontSize": "21px" },
           "small": { "padding": "10px 20px", "fontSize": "18px" }
-        }
+        },
+        "tailwind": "bg-carbon text-white type-cta px-8 py-4 font-bold hover:bg-tungsten transition-colors"
       },
       {
         "name": "CTA",
         "background": "Tungsten (#404040)",
         "text": "White",
-        "hover": "Carbon (#1A1A1A)"
+        "hover": "Carbon (#1A1A1A)",
+        "tailwind": "bg-tungsten text-white type-cta px-8 py-4 font-bold hover:bg-carbon transition-colors"
       },
       {
         "name": "Outline",
         "background": "Transparent",
         "border": "2px solid Carbon",
         "text": "Carbon",
-        "hover": "Fill Carbon, text White"
+        "hover": "Fill Carbon, text White",
+        "tailwind": "border-2 border-carbon text-carbon type-cta px-8 py-4 font-bold hover:bg-carbon hover:text-white transition-colors"
       },
       {
         "name": "Ghost",
         "background": "Transparent",
         "border": "1px solid Border",
         "text": "Muted foreground",
-        "hover": "Border darkens to Carbon"
+        "hover": "Border darkens to Carbon",
+        "tailwind": "border border-border text-muted-foreground type-cta px-8 py-4 font-bold hover:border-carbon transition-colors"
       },
       {
         "name": "On Dark — Primary",
         "background": "White",
         "text": "Carbon",
-        "hover": "Silica"
+        "hover": "Silica",
+        "tailwind": "bg-white text-carbon type-cta px-8 py-4 font-bold hover:bg-silica transition-colors"
       },
       {
         "name": "On Dark — Outline",
         "background": "Transparent",
         "border": "2px solid White",
         "text": "White",
-        "hover": "Fill White, text Carbon"
+        "hover": "Fill White, text Carbon",
+        "tailwind": "border-2 border-white text-white type-cta px-8 py-4 font-bold hover:bg-white hover:text-carbon transition-colors"
       }
     ]
   },
@@ -138,23 +184,23 @@
   "badgesAndLabels": {
     "description": "Status indicators, tags, and category labels using Carbon backgrounds with white text.",
     "badges": [
-      { "name": "Carbon", "background": "Carbon (#1A1A1A)", "text": "White", "usage": "Primary badge" },
-      { "name": "Tungsten", "background": "Tungsten (#404040)", "text": "White", "usage": "Secondary badge" },
-      { "name": "Outline", "background": "Transparent", "border": "1px solid Carbon", "text": "Foreground" },
-      { "name": "Muted", "background": "Silica (#F0F0F0)", "text": "Muted foreground" },
-      { "name": "Graphene", "background": "Graphene (#979797)", "text": "White" }
+      { "name": "Carbon", "background": "Carbon (#1A1A1A)", "text": "White", "usage": "Primary badge", "tailwind": "bg-carbon text-white" },
+      { "name": "Tungsten", "background": "Tungsten (#404040)", "text": "White", "usage": "Secondary badge", "tailwind": "bg-tungsten text-white" },
+      { "name": "Outline", "background": "Transparent", "border": "1px solid Carbon", "text": "Foreground", "tailwind": "border border-carbon text-foreground bg-transparent" },
+      { "name": "Muted", "background": "Silica (#F0F0F0)", "text": "Muted foreground", "tailwind": "bg-silica text-muted-foreground" },
+      { "name": "Graphene", "background": "Graphene (#979797)", "text": "White", "tailwind": "bg-graphene text-white" }
     ],
     "badgeStyle": "px-3 py-1, text-xs, font-bold, uppercase, tracking-widest",
     "sectionLabels": {
       "style": "0.75rem, font-bold, uppercase, tracking 0.12em, color Tungsten",
-      "token": "c3-label"
+      "cssClass": "c3-label"
     },
     "statusIndicators": [
-      { "label": "Active", "dotColor": "#37C43A" },
-      { "label": "Processing", "dotColor": "#06A7E0" },
-      { "label": "Warning", "dotColor": "#F5881F" },
-      { "label": "Error", "dotColor": "Tungsten (#404040)" },
-      { "label": "Inactive", "dotColor": "Graphene (#979797)" }
+      { "label": "Active", "dotColor": "#37C43A", "tailwind": "bg-[#37C43A]" },
+      { "label": "Processing", "dotColor": "#06A7E0", "tailwind": "bg-[#06A7E0]" },
+      { "label": "Warning", "dotColor": "#F5881F", "tailwind": "bg-[#F5881F]" },
+      { "label": "Error", "dotColor": "#404040", "tailwind": "bg-tungsten" },
+      { "label": "Inactive", "dotColor": "#979797", "tailwind": "bg-graphene" }
     ]
   },
 
@@ -166,24 +212,28 @@
         "background": "White",
         "border": "1px solid Border",
         "hover": "Border darkens to Carbon",
-        "structure": ["c3-label category tag", "H4 headline", "Body 2 description", "CTA link"]
+        "structure": ["c3-label category tag", "H4 headline", "Body 2 description", "CTA link"],
+        "tailwind": "border border-border p-8 hover:border-carbon transition-colors"
       },
       {
         "name": "Dark",
         "background": "Carbon (#1A1A1A)",
         "text": "White",
-        "structure": ["c3-label category tag", "H4 headline (white)", "Body 2 description (graphene)", "CTA link (white)"]
+        "structure": ["c3-label category tag", "H4 headline (white)", "Body 2 description (graphene)", "CTA link (white)"],
+        "tailwind": "bg-carbon p-8"
       },
       {
         "name": "Silica",
         "background": "Silica (#F0F0F0)",
-        "structure": ["c3-label category tag", "H4 headline", "Body 2 description", "CTA link"]
+        "structure": ["c3-label category tag", "H4 headline", "Body 2 description", "CTA link"],
+        "tailwind": "bg-silica p-8"
       }
     ],
     "metricCards": {
       "description": "Grid of stat cards separated by 1px border gaps",
       "structure": ["H2 stat value", "Caption label (uppercase, tracking-widest)"],
-      "background": "White with 1px border grid"
+      "background": "White with 1px border grid",
+      "tailwind": "grid grid-cols-2 md:grid-cols-4 gap-px bg-border"
     },
     "rules": [
       "Sharp corners — never use border-radius on cards",
@@ -193,24 +243,25 @@
   },
 
   "spacing": {
-    "description": "8pt grid system with defined spacing tokens from 4px to 96px.",
+    "description": "8pt grid system with defined spacing tokens from 4px to 192px.",
     "gridBasis": "8pt",
     "tokens": [
-      { "name": "space-1", "value": "4px", "rem": "0.25rem" },
-      { "name": "space-2", "value": "8px", "rem": "0.5rem" },
-      { "name": "space-3", "value": "12px", "rem": "0.75rem" },
-      { "name": "space-4", "value": "16px", "rem": "1rem" },
-      { "name": "space-6", "value": "24px", "rem": "1.5rem" },
-      { "name": "space-8", "value": "32px", "rem": "2rem" },
-      { "name": "space-12", "value": "48px", "rem": "3rem" },
-      { "name": "space-16", "value": "64px", "rem": "4rem" },
-      { "name": "space-24", "value": "96px", "rem": "6rem" }
+      { "name": "space-1", "value": "8px", "rem": "0.5rem", "token": "--space-1" },
+      { "name": "space-2", "value": "16px", "rem": "1rem", "token": "--space-2" },
+      { "name": "space-3", "value": "24px", "rem": "1.5rem", "token": "--space-3" },
+      { "name": "space-4", "value": "32px", "rem": "2rem", "token": "--space-4" },
+      { "name": "space-6", "value": "48px", "rem": "3rem", "token": "--space-6" },
+      { "name": "space-8", "value": "64px", "rem": "4rem", "token": "--space-8" },
+      { "name": "space-12", "value": "96px", "rem": "6rem", "token": "--space-12" },
+      { "name": "space-16", "value": "128px", "rem": "8rem", "token": "--space-16" },
+      { "name": "space-24", "value": "192px", "rem": "12rem", "token": "--space-24" }
     ],
     "rules": [
-      "All spacing values are multiples of 4px",
-      "Section padding: space-16 (64px) or space-24 (96px)",
-      "Component internal padding: space-8 (32px)",
-      "Element gaps: space-4 (16px) to space-6 (24px)"
+      "All spacing values are multiples of 8px",
+      "Section padding: space-16 (128px) or space-24 (192px)",
+      "Component internal padding: space-8 (64px)",
+      "Element gaps: space-4 (32px) to space-6 (48px)",
+      "Max content width: 1400px (max-w-screen-xl)"
     ]
   },
 
@@ -257,8 +308,8 @@
       },
       {
         "number": "06",
-        "title": "100% letter spacing for headlines",
-        "description": "Headlines (H1–H4) use 100% letter-spacing (normal tracking). Body copy, sub-headlines, and buttons also use normal tracking.",
+        "title": "Normal letter spacing for headlines",
+        "description": "Headlines (H1–H4) use normal letter-spacing (letter-spacing: 0). Body copy, sub-headlines, and buttons also use normal tracking.",
         "appliesTo": ["H1", "H2", "H3", "H4"]
       }
     ]
@@ -270,25 +321,25 @@
     "toneTenets": [
       {
         "name": "Human",
-        "description": "Open and engaging. Our language is relatable without feeling forced or overly familiar.",
+        "description": "Open and engaging. Our language is relatable without feeling forced or overly familiar. We respect our audience by prioritizing their needs before our own.",
         "is": ["Welcoming", "Personal", "Respectful", "Sincere"],
         "isNot": ["Cold", "Overbearing", "Whimsical", "Self-centered", "Boastful"]
       },
       {
         "name": "Sophisticated",
-        "description": "Confident, refined, and clear. We stay on topic and get to the point.",
+        "description": "Confident, refined, and clear. We stay on topic and get to the point. Our language is polished without being formal or self-important.",
         "is": ["Strong", "Refined", "Current"],
         "isNot": ["Complex", "Superior", "Dull"]
       },
       {
         "name": "Aspirational",
-        "description": "Forward-looking and empowering. We explain how to get there, not just talk about the future.",
+        "description": "Forward-looking and empowering. We don't just talk about the future — we explain how to get there. Our tone makes progress feel achievable today.",
         "is": ["Accessible", "Empowering", "Optimistic", "Grounded"],
         "isNot": ["Self-centered", "Boastful", "Difficult"]
       },
       {
         "name": "Intelligent",
-        "description": "Relevant and responsive. We understand our audience's context and meet them where they are.",
+        "description": "Relevant and responsive. We understand our audience's context and meet them where they are. We sound smart — but never like we know it all.",
         "is": ["Intuitive", "Relevant", "Direct", "Responsive"],
         "isNot": ["Unclear", "Arrogant", "Impatient"]
       }
@@ -296,10 +347,11 @@
     "dos": [
       "Connect with and engage your audience",
       "Acknowledge user needs before promoting the brand",
-      "Use contractions for a natural, conversational feel",
+      "Use contractions for a natural, conversational feel (e.g., we're, not we are)",
       "Be concise and remove unnecessary complexity",
       "Prioritize clarity and quality over quantity",
       "Use clear value statements and back up claims with specifics",
+      "Use specifics when referencing future technology or innovation",
       "Reinforce messages with clear calls to action",
       "Be proactive — anticipate questions and address context",
       "Assume intelligence, regardless of technical expertise"
@@ -311,7 +363,7 @@
       "Use dated or overly formal business language",
       "Talk down to readers or overcomplicate explanations",
       "Use passive voice",
-      "Speak in vague or hypothetical terms without proof",
+      "Speak in vague or hypothetical terms (e.g., 'future-ready' without proof)",
       "Rely on tech or business clichés",
       "Use excessive jargon for non-technical audiences",
       "Use metaphors, puns, or clever phrasing that could confuse"
@@ -353,13 +405,15 @@
         "step": "05",
         "title": "Social / 3rd Party Proof",
         "userState": "Trust & Credibility",
-        "content": ["Case studies", "Testimonials", "Customer or partner logos", "Links to third-party validation"]
+        "content": ["Case studies", "Testimonials", "Customer or partner logos", "Links to third-party validation"],
+        "experience": []
       },
       {
         "step": "06",
         "title": "How It Works",
         "userState": "Comprehension",
-        "content": ["Explain the mechanics of the offering", "Show how it fits within an existing stack", "Establish subject-matter expertise"]
+        "content": ["Explain the mechanics of the offering", "Show how it fits within an existing stack", "Establish subject-matter expertise"],
+        "experience": []
       },
       {
         "step": "07",
@@ -386,6 +440,23 @@
         "examples": ["Scientist in laboratory", "Industrial robot arm", "Naval warship", "Satellite dish", "Factory workers"]
       }
     ],
+    "preferredImageLibrary": [
+      { "number": "01", "label": "Industrial Scale", "category": "Systems at Scale", "description": "Reactor vessel under construction inside a vast steel-paneled assembly facility." },
+      { "number": "02", "label": "Precision Machinery", "category": "Subject in Focus", "description": "Welder alongside a robotic arm with green laser on a large curved metal component." },
+      { "number": "03", "label": "Aerospace Defense", "category": "Subject in Focus", "description": "B-21 stealth bomber centered in a darkened hangar, straight-on silhouette." },
+      { "number": "04", "label": "Global Supply Chain", "category": "Systems at Scale", "description": "Cargo ship being loaded with an aircraft fuselage section by crane." },
+      { "number": "05", "label": "Aerospace Manufacturing", "category": "Systems at Scale", "description": "Airbus A321 assembly line inside a pristine factory floor." },
+      { "number": "06", "label": "Naval Industry", "category": "Systems at Scale", "description": "Shipyard at sunset with large cranes reflected in still water." },
+      { "number": "07", "label": "Ship Construction", "category": "Subject in Focus", "description": "Rusted ship hull block with scaffolding ladders and pipes at dusk." },
+      { "number": "08", "label": "Space Infrastructure", "category": "Systems at Scale", "description": "NASA Vehicle Assembly Building interior — towering steel lattice." },
+      { "number": "09", "label": "Data Infrastructure", "category": "Systems at Scale", "description": "Data center interior with vibrantly colored cooling pipes and cable trays." },
+      { "number": "10", "label": "Precision Processing", "category": "Subject in Focus", "description": "Industrial printing press rolls photographed from above — strong rhythm and pattern." },
+      { "number": "11", "label": "Power Generation", "category": "Systems at Scale", "description": "Massive industrial turbine rotor with intricate blades showing immense scale." },
+      { "number": "12", "label": "Advanced Manufacturing", "category": "Subject in Focus", "description": "Automated welding robot on a large circular metal component with green laser guidance." },
+      { "number": "13", "label": "Cleanroom Operations", "category": "Subject in Focus", "description": "Two technicians in full cleanroom suits inspecting a monitor." },
+      { "number": "14", "label": "Campus Life", "category": "Subject in Focus", "description": "Team members walking outdoors on campus stairs with coffee." },
+      { "number": "15", "label": "Scientific Research", "category": "Subject in Focus", "description": "Researcher examining equipment in a laboratory with complex machinery." }
+    ],
     "usageRules": [
       "Photography should always be immersive and engaging",
       "Panoramic imagery, closely cropped frames, and densely populated visuals work well",
@@ -396,7 +467,8 @@
       "Dot masks can reveal photography through multi-scale circular cutouts",
       "Gradient overlays (carbon to transparent) for text legibility on hero images",
       "Grayscale is not required — full color is standard"
-    ]
+    ],
+    "fileNaming": "src/assets/imagery/preferred-*.jpg"
   },
 
   "animation": {
@@ -405,24 +477,48 @@
       {
         "name": "Cascade Reveal",
         "keyword": "cascade-reveal",
+        "component": "CascadeReveal",
+        "importPath": "@/components/c3/CascadeReveal",
         "description": "Elements fade and translate into position as the user scrolls them into the viewport.",
         "variants": {
-          "text": { "effect": "translateY(40px) + fade", "duration": "0.7s", "easing": "cubic-bezier(0.16, 1, 0.3, 1)" },
-          "image": { "effect": "scale(0.95) + fade", "duration": "0.8s", "easing": "cubic-bezier(0.16, 1, 0.3, 1)" }
+          "text": {
+            "cssClass": "cascade-text",
+            "effect": "translateY(40px) + fade",
+            "duration": "0.7s",
+            "easing": "cubic-bezier(0.16, 1, 0.3, 1)"
+          },
+          "image": {
+            "cssClass": "cascade-image",
+            "effect": "scale(0.95) + fade",
+            "duration": "0.8s",
+            "easing": "cubic-bezier(0.16, 1, 0.3, 1)"
+          }
         },
-        "stagger": "120ms between children",
+        "stagger": "120ms between children (cascade-child class)",
+        "maxStaggeredChildren": 6,
         "resettable": true,
-        "usage": "Add class 'cascade-child' to each staggered element inside a CascadeReveal wrapper."
+        "props": ["variant (text|image)", "delay", "resettable"],
+        "usage": "Wrap content in <CascadeReveal variant='text'>, add 'cascade-child' class to each staggered element."
       },
       {
         "name": "Parallax Drift",
         "keyword": "parallax-drift",
+        "component": "ParallaxDrift",
+        "importPath": "@/components/c3/ParallaxDrift",
         "description": "Full-viewport sections where the background image moves at a slower rate than the foreground content, creating depth.",
         "intensity": "0–1 (default 0.3)",
         "alignOptions": ["center", "bottom-left"],
-        "overlay": true
+        "overlay": true,
+        "props": ["imageSrc", "imageAlt", "intensity", "align", "overlay"]
       }
     ],
+    "keyframes": {
+      "accordion-down": { "from": "height: 0", "to": "height: var(--radix-accordion-content-height)" },
+      "accordion-up": { "from": "height: var(--radix-accordion-content-height)", "to": "height: 0" },
+      "fade-up": { "from": "opacity: 0; translateY(24px)", "to": "opacity: 1; translateY(0)", "duration": "0.5s" },
+      "slide-in": { "from": "opacity: 0; translateX(-16px)", "to": "opacity: 1; translateX(0)", "duration": "0.4s" },
+      "cascade-child-in": { "from": "opacity: 0; translateY(24px)", "to": "opacity: 1; translateY(0)", "duration": "0.6s" }
+    },
     "rules": [
       "Motion is opt-in, not default",
       "One well-timed hero animation creates more delight than scattered micro-interactions",
@@ -445,9 +541,29 @@
       "dotSize": "1px",
       "gridSpacing": "20px",
       "opacity": "10–12%",
-      "color": "Carbon on White or Silica"
+      "color": "Carbon on White or Silica",
+      "css": "background-image: radial-gradient(circle, hsl(var(--carbon)) 1px, transparent 1px); background-size: 20px 20px; opacity: 0.10;"
     },
-    "compositions": ["Staircase", "Multi-Scale Grid", "Dense Grid", "Left Anchor", "Top Anchor", "Halftone Grid", "Ascending Clusters"],
+    "compositions": [
+      { "name": "Staircase", "file": "dots-staircase.svg", "description": "Multi-scale cascade — progressive dot sizes suggest growth and transformation" },
+      { "name": "Multi-Scale Grid", "file": "dots-multi-scale.svg", "description": "Mixed density composition — small grids alongside large focal circles" },
+      { "name": "Dense Grid", "file": "dots-grid-dense.svg", "description": "Uniform dense grid — represents raw data, complexity, and scale" },
+      { "name": "Left Anchor", "file": "dots-left.png", "description": "Edge-anchored pattern — partial grid for asymmetric layouts and bleeds" },
+      { "name": "Top Anchor", "file": "dots-top.png", "description": "Top-anchored pattern — horizontal dot band for headers and section dividers" },
+      { "name": "Halftone Grid", "file": "dots-halftone-grid.jpg", "description": "Multi-scale halftone grid — progressive dot sizes create depth and visual rhythm" },
+      { "name": "Ascending Clusters", "file": "dots-ascending-clusters.jpg", "description": "Clustered dot formations — ascending scale suggests growth and emergence" }
+    ],
+    "animations": [
+      { "name": "Grid Reveal", "description": "Sequential dot appearance with staggered fade — loading states and data visualization reveals" },
+      { "name": "Radial Pulse", "description": "Breathing wave emanating from center — data processing or system analysis in progress" },
+      { "name": "Circle Formation", "description": "Dots in circular arrangement with traveling highlight — cyclical processes and continuous operation" },
+      { "name": "Scale Cascade", "description": "Center-out scale animation — expanding influence or insight radiating from a central point" },
+      { "name": "Convergence", "description": "Dots converge to center and disperse — data aggregation and synthesis of information" },
+      { "name": "Wave Columns", "description": "Traveling wave across columns — data flow, streaming information, or sequential processing" },
+      { "name": "Diagonal Sweep", "description": "Curtain-like reveal along the diagonal axis — transitions, section reveals, and cinematic entrances" },
+      { "name": "Diamond Morph", "description": "Grid dots pulse into a diamond formation — structured transformation and data crystallization" },
+      { "name": "Spiral Orbit", "description": "Dots trace expanding spiral paths — growth, discovery, and expanding reach of intelligence" }
+    ],
     "usageRules": [
       "Create metaphors — use dots to visually represent complex systems, data networks, or AI processes",
       "Complement text — dots work alongside typography to reinforce messaging",
@@ -467,69 +583,135 @@
     "library": [
       {
         "name": "WebNav",
-        "description": "Primary site navigation with logo, inline links, and outlined CTA button."
+        "importPath": "@/components/c3/WebNav",
+        "description": "Primary site navigation with logo, inline links, and outlined CTA button.",
+        "props": []
       },
       {
         "name": "HeroFullscreen",
+        "importPath": "@/components/c3/HeroFullscreen",
         "description": "Full-viewport hero with optional background image. Light (default) and dark variants.",
         "variants": ["light (dot grid texture, dark text on silica)", "dark (background image, white text on carbon)"],
         "props": ["headline", "description", "backgroundImage", "variant", "primaryCta", "secondaryCta"]
       },
       {
         "name": "HeroHomepage",
+        "importPath": "@/components/c3/HeroHomepage",
         "description": "Homepage hero with bold/light headline split, play button, and tagline.",
         "variants": ["light", "dark"],
         "props": ["headlineBold", "headlineLight", "backgroundImage", "variant", "playButton", "tagline"]
       },
       {
-        "name": "ContentCardsTiled",
-        "description": "Asymmetric bento-grid layout: large hero card spanning rows with smaller cards alongside.",
-        "props": ["headline", "topCards", "bottomCards"]
+        "name": "Features4x",
+        "importPath": "@/components/c3/Features4x",
+        "description": "Dark-background 4-column feature grid with numbered cards, icons, and a tag pill header.",
+        "props": ["tag", "headline", "description", "features"]
       },
       {
-        "name": "ContentCards5050",
-        "description": "Headline with two equal side-by-side image cards, each with a label overlay.",
-        "props": ["headline", "cards"]
+        "name": "Features6x",
+        "importPath": "@/components/c3/Features6x",
+        "description": "Dark-background 3×2 feature grid with bordered cells, numbered cards, icons, and optional CTA.",
+        "props": ["tag", "headline", "ctaLabel", "features"]
+      },
+      {
+        "name": "Features3xHero",
+        "importPath": "@/components/c3/Features3xHero",
+        "description": "Large hero heading with tag and description, plus 3 image feature cards below.",
+        "props": ["tag", "headline", "description", "ctaLabel", "features"]
       },
       {
         "name": "FeaturesGrid",
+        "importPath": "@/components/c3/FeaturesGrid",
         "description": "Flexible feature grid supporting 3-column, 2×2, and 3×2 layouts with optional hero image.",
         "props": ["headline", "description", "heroImage", "features", "columns", "primaryCta"]
       },
       {
         "name": "FeatureSplit",
+        "importPath": "@/components/c3/FeatureSplit",
         "description": "Two-column layout with text on one side and image on the other.",
         "props": ["headline", "description", "image", "imagePosition", "primaryCta", "secondaryCta"]
       },
       {
-        "name": "AccordionSection",
-        "description": "Expandable accordion on silica background with semantic text colors.",
-        "props": ["headline", "items"]
+        "name": "GalleryMosaic",
+        "importPath": "@/components/c3/GalleryMosaic",
+        "description": "Full-width masonry-style image grid with hover caption overlay on dark background.",
+        "props": ["tag", "headline", "description", "images"]
+      },
+      {
+        "name": "GalleryTiled",
+        "importPath": "@/components/c3/GalleryTiled",
+        "description": "Equal-size tile grid with numbered hover overlay, arrow icon, and slide-up label.",
+        "props": ["tag", "headline", "ctaLabel", "items"]
       },
       {
         "name": "Gallery",
+        "importPath": "@/components/c3/Gallery",
         "description": "Horizontally scrolling image carousel with prev/next arrows and dot indicators.",
         "props": ["title", "images"]
       },
       {
+        "name": "ContactSplit",
+        "importPath": "@/components/c3/ContactSplit",
+        "description": "Dark-background split layout: left headline with contact details, right form with underline inputs.",
+        "props": ["tag", "headline", "description", "details"]
+      },
+      {
         "name": "ContactForm",
-        "description": "Light-themed contact section on silica with white input fields and carbon submit button."
+        "importPath": "@/components/c3/ContactForm",
+        "description": "Light-themed contact section on silica with white input fields and carbon submit button.",
+        "props": ["headline", "description"]
+      },
+      {
+        "name": "CtaCentered",
+        "importPath": "@/components/c3/CtaCentered",
+        "description": "Dark-background centered CTA with large headline, two buttons, and social proof badges.",
+        "props": ["tag", "headline", "description", "primaryLabel", "secondaryLabel", "badges"]
+      },
+      {
+        "name": "CtaSplit",
+        "importPath": "@/components/c3/CtaSplit",
+        "description": "Split layout: light left panel with copy and CTA, dark right panel with background image and pricing card.",
+        "props": ["tag", "headline", "description", "ctaLabel", "socialProof", "image", "pricingLabel", "pricingValue", "pricingSubtext", "pricingFeatures"]
+      },
+      {
+        "name": "ContentCardsTiled",
+        "importPath": "@/components/c3/ContentCardsTiled",
+        "description": "Asymmetric bento-grid layout: large hero card spanning rows with smaller cards alongside.",
+        "props": ["headline", "topCards", "bottomCards"]
+      },
+      {
+        "name": "ContentCards5050",
+        "importPath": "@/components/c3/ContentCards5050",
+        "description": "Headline with two equal side-by-side image cards, each with a label overlay.",
+        "props": ["headline", "cards"]
+      },
+      {
+        "name": "AccordionSection",
+        "importPath": "@/components/c3/AccordionSection",
+        "description": "Expandable accordion on silica background with semantic text colors.",
+        "props": ["headline", "items"]
       },
       {
         "name": "RequestDemoFooter",
-        "description": "Silica-background section with bold headline and carbon CTA button."
+        "importPath": "@/components/c3/RequestDemoFooter",
+        "description": "Silica-background section with bold headline and carbon CTA button.",
+        "props": ["headline", "buttonLabel", "href"]
       },
       {
         "name": "MegaFooter",
-        "description": "Full-width mega footer with branded headline, staircase motif, categorized link columns, and bottom legal bar."
+        "importPath": "@/components/c3/MegaFooter",
+        "description": "Full-width mega footer with branded headline, staircase motif, categorized link columns, and bottom legal bar.",
+        "props": ["headline", "headlineAccent"]
       },
       {
         "name": "CascadeReveal",
+        "importPath": "@/components/c3/CascadeReveal",
         "description": "Scroll-triggered animation wrapper. Applies cascade-reveal animations to children.",
         "props": ["variant (text|image)", "delay", "resettable"]
       },
       {
         "name": "ParallaxDrift",
+        "importPath": "@/components/c3/ParallaxDrift",
         "description": "Full-viewport parallax section with background image depth effect.",
         "props": ["imageSrc", "imageAlt", "intensity", "align", "overlay"]
       }
@@ -539,8 +721,44 @@
   "icons": {
     "description": "Google Material Symbols (Outlined) loaded via Google Fonts. Icons render as ligatures.",
     "source": "https://fonts.google.com/icons",
+    "fontFamily": "material-symbols-outlined",
     "defaultSize": "24px",
     "sizes": ["20px", "24px", "36px", "48px"],
-    "usage": "<span class=\"material-symbols-outlined\">icon_name</span>"
+    "usage": "<span className=\"material-symbols-outlined\">icon_name</span>",
+    "commonIcons": [
+      "search", "menu", "close", "arrow_forward", "arrow_back",
+      "check_circle", "error", "info", "settings", "person",
+      "mail", "notifications", "download", "upload", "edit",
+      "delete", "visibility", "lock", "trending_up", "analytics",
+      "bar_chart", "schedule", "cloud", "memory"
+    ]
+  },
+
+  "tailwindConfig": {
+    "description": "Tailwind CSS configuration extending the design system tokens.",
+    "darkMode": "class",
+    "borderRadius": "0rem (sharp corners everywhere)",
+    "letterSpacing": {
+      "tightest": "-0.03em",
+      "tighter": "-0.02em",
+      "tight": "-0.01em",
+      "wide": "0.05em",
+      "wider": "0.08em",
+      "widest": "0.12em"
+    },
+    "maxContentWidth": "1400px",
+    "containerPadding": "2rem",
+    "plugins": ["tailwindcss-animate"]
+  },
+
+  "globalCSSRules": {
+    "description": "Global CSS rules applied via index.css base layer.",
+    "rules": [
+      "All elements use border-border by default",
+      "Body uses bg-background text-foreground with antialiased font smoothing",
+      "All text elements default to text-align: left",
+      "h1-h4 elements have font-weight: 700, letter-spacing: 0, text-transform: capitalize",
+      "h5-h6 elements have font-weight: 700, letter-spacing: normal, text-transform: none"
+    ]
   }
 }
